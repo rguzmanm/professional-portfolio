@@ -17,6 +17,8 @@ Import the [RPA Challenge.zip](https://github.com/rguzmanm/professional-portfoli
 Import the [RPA Challenge V1.0.1.bprelease](https://github.com/rguzmanm/professional-portfolio/tree/master/RPA%20Projects/RPA%20Challenge/RPA%20Challenge%20-%20Blue%20Prism) to our local control room and run the RPAChallenge process. No other configuration is required.
 
 ## Workfusion
-If you only want to run the automation, use the [RPAChallengeV1.0.0.zip](https://rpachallenge.com/) package, publish it to your local control tower, and run it. No other configuration is required.
-
-You can download the source code from [here](https://rpachallenge.com/).
+1. Download the source code from [here](https://github.com/rguzmanm/professional-portfolio/tree/master/RPA%20Projects/RPA%20Challenge/RPA%20Challenge%20-%20Workfusion/rpachallenge).
+2. Move the downloaded files to your Workfusion Workspace folder. 
+3. Import the project into your local studio using the "Import Existing Maven Projects" option.
+4. Use the "clean install" instruction in the "rpachallenge" root folder
+5. Use the "bundle:import" instruction in the "rpachallenge-package" folder to publish the Business Process into the Control Tower
