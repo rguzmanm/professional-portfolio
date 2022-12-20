@@ -1,0 +1,13 @@
+application,page_name,element_name,key,value
+RPA Challenge,HomePage,button,DOWNLOAD_FILE,"""//a[contains(text(),'Download')]"""
+RPA Challenge,HomePage,button,START_BUTTON,//button[text()='Start']
+RPA Challenge,HomePage,input,FIRST_NAME_INPUT,//label[text()='First Name']/../input
+RPA Challenge,HomePage,input,LAST_NAME_INPUT,//label[text()='Last Name']/../input
+RPA Challenge,HomePage,input,COMPANY_INPUT,//label[text()='Company Name']/../input
+RPA Challenge,HomePage,input,ROLE_INPUT,//label[text()='Role in Company']/../input
+RPA Challenge,HomePage,input,ADDRESS_INPUT,//label[text()='Address']/../input
+RPA Challenge,HomePage,input,EMAIL_INPUT,//label[text()='Email']/../input
+RPA Challenge,HomePage,input,PHONE_INPUT,//label[text()='Phone Number']/../input
+RPA Challenge,HomePage,button,SUBMIT_BUTTON,//input[@type='submit']
+Desktop,File Explorer,window,SAVE_AS_WINDOW,"[class='#32770'][title='Save As'],[title='Guardar como']"
+Desktop,File Explorer,bar,FILENAME_BAR,.Edit

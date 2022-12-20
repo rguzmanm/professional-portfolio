@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://web-harvest.sourceforge.net/schema/1.0/config" scriptlang="groovy">
+
+    <robotics-flow>
+        <robot driver="universal" close-on-completion="true">
+        
+        	<capability name="chromeOptions">
+				<script return="chromeArgs"><![CDATA[
+					//for getting 'Save As' dialogue box while downloading any file
+					import java.util.Hashtable;
+					import org.openqa.selenium.remote.DesiredCapabilities;
+					import org.openqa.selenium.chrome.ChromeOptions;
+
+					ChromeOptions options = new ChromeOptions();
+					Map<String, Object> chromePrefs = new Hashtable<String, Object>();
+					chromePrefs.put("profile.default_content_settings.popups", 0);
+					chromePrefs.put("download.prompt_for_download", true);
+					options.setExperimentalOption("prefs", chromePrefs);
+					options.setExperimentalOption("w3c", false);
+					chromeArgs = options;
+				]]></script>
+			</capability>
+			
+            <script><![CDATA[
+                import challenge.rpachallenge.app.RPAChallengeApp
+                import challenge.rpachallenge.supplier.TransactionSupplierRPAChallenge
+
+                def app = RPAChallengeApp.init(binding).get();
+                def transactions = app.loadTransactions(TransactionSupplierRPAChallenge.class);
+
+                // Exporting only transaction ids to the next steps.
+                result = [];
+                transactions.each {
+                    result << ['transaction_id': it.id];
+                }
+                ]]></script>
+        </robot>
+    </robotics-flow>
+
+    <export include-original-data="false">
+        <multi-column list="${result}" split-results="true">
+            <put-to-column-getter name="_sys_transaction_id" property="transaction_id"/>
+        </multi-column>
+    </export>
+</config>

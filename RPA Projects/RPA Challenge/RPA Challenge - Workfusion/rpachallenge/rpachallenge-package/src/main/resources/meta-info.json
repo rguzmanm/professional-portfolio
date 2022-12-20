@@ -1,0 +1,9 @@
+{
+    "AUTHOR": "Rafael Guzman",
+    "DESCRIPTION": "rpa-challenge 0.0.1",
+    "INSTANCE": "someinstance.workfusion.com",
+    "NAME": "rpa-challenge:0.0.1",
+    "PACKAGE_DATE": "2019-9-20 00:00:00",
+    "TARGET_VERSION": "10.1.0.0",
+    "WF_VERSION": "10.1.0.12"
+}
